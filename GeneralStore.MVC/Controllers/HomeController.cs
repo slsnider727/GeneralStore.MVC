@@ -15,7 +15,7 @@ namespace GeneralStore.MVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Get to know us.";
 
             return View();
         }

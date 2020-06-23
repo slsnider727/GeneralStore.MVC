@@ -2,21 +2,24 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>General Store</h1>
-    <p class="lead">Manage the products and transactions in your general store with this MVC!</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    <div class="jumbotron">
+        <h1>General Store</h1>
+        <p class="lead">
+            Welcome to our General Store!
+        </p>
+        <!--<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>  //This way is how we link to outside URL-->
+        @Html.ActionLink("Check Products", "Index", "Product", null, new { @class = "btn btn-primary btn-large" }) <!--This is how we link to our own page-->
+    </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>About Us</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Our General Store, located in rural Indiana, is host to a multitude of fine food and items of distinction.
+            <br />
+            Come browse our products and see what we have for you.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        @Html.ActionLink("Learn More About Us", "About")
     </div>
     <div class="col-md-4">
         <h2>Get more libraries</h2>
