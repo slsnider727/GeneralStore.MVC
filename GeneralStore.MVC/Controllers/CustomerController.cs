@@ -17,6 +17,24 @@ namespace GeneralStore.MVC.Controllers
             return View(_db.Customers.ToList());
         }
 
+        // GET: Customer/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
 
+        // POST: Customer/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Customers.Add(customer);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(customer);
+        }
     }
 }

@@ -21,14 +21,15 @@ namespace GeneralStore.MVC.Controllers
             return View(orderedList);
         }
 
-        // GET: Product
+        // GET: Product/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Product
+        // POST: Product/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Product product)
         {
             if (ModelState.IsValid)
